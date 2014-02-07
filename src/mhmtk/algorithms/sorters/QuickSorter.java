@@ -55,7 +55,7 @@ public class QuickSorter{
 	 * @param last the index of the last element in the part of list to sort
 	 * @return
 	 */
-	private int pivotList(int first, int last) {
+	private int pivotList(int first, int last) { 
 		int pivotValue = mList[first];
 		int pivotPoint = first;
 		for (int index = first +1; index<=last;index++) {

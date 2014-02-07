@@ -5,7 +5,7 @@ public class MergeSorter {
 	private int[] mList;
 
 	//counters
-	private int swapCount;
+	private int swapCount; 
 	private int compareCount;
 
 	/**
