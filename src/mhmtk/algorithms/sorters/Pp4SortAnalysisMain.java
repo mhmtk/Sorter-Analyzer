@@ -16,7 +16,7 @@ public class Pp4SortAnalysisMain {
 	private static void test() {
 
 		//create sorters
-		HeapSorter hSorter = new HeapSorter();
+//		HeapSorter hSorter = new HeapSorter();
 //		MergeSorter mSorter = new MergeSorter();
 //		QuickSorter qSorter = new QuickSorter();
 
@@ -24,29 +24,31 @@ public class Pp4SortAnalysisMain {
 
 			//get a list with random numbers, size=N
 			RandomListGenerator rlg = new RandomListGenerator(n);
-			int[] testList = rlg.getRandomList();
+			int[] testList1 = rlg.getRandomList();
+			int[] testList2 = testList1;
+			int[] testList3 = testList1;
 
 			//sort a copy of the testList w/ each algorithm
 			int[] hlist = 
-					hSorter.sort(testList);
+					HeapSorter.sort(testList1);
 			for (int i=0;i<hlist.length; i++) {
 				System.out.println(hlist[i]);
 			}
-//			int[] mlist = 
-					MergeSorter.sort(testList);
-//			for (int i=0;i<mlist.length; i++) {
-//				System.out.println(mlist[i]);
-//			}
-//			int[] qlist = 
-					QuickSorter.sort(testList);
-//			for (int i=0;i<qlist.length; i++) {
-//				System.out.println(qlist[i]);
-//			}
+			int[] mlist = 
+					MergeSorter.sort(testList2);
+			for (int i=0;i<mlist.length; i++) {
+				System.out.println(mlist[i]);
+			}
+			int[] qlist = 
+					QuickSorter.sort(testList3);
+			for (int i=0;i<qlist.length; i++) {
+				System.out.println(qlist[i]);
+			}
 
 			//store the results
 			results[n/Nincrement-1][0] = n;
-			results[n/Nincrement-1][1] = hSorter.getSwapCount();
-			results[n/Nincrement-1][2] = hSorter.getCompareCount();
+			results[n/Nincrement-1][1] = HeapSorter.getSwapCount();
+			results[n/Nincrement-1][2] = HeapSorter.getCompareCount();
 			results[n/Nincrement-1][3] = MergeSorter.getSwapCount();
 			results[n/Nincrement-1][4] = MergeSorter.getCompareCount(); 
 			results[n/Nincrement-1][5] = QuickSorter.getSwapCount();
