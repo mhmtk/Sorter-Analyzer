@@ -16,18 +16,20 @@ public class HeapSorter
 
 	/**
 	 * 
-	 * @param list
-	 * @return 
+	 * @param list the list to be sorted
+	 * @return the sorted list
 	 */
 	public static int[] sort(int[] list){ 
 		mList=list; 
 		buildheap();
 
 		for(int i=n;i>0;i--){ 
+			compareCount++; //for the comp that put us into the for-loop
 			swap(0, i); 
 			n=n-1; 
 			maxheap(0); 
-		} 
+		}
+		compareCount++; //for the comp that put us outside the for-loop
 		return mList;
 	} 
 
@@ -37,8 +39,10 @@ public class HeapSorter
 	private static void buildheap(){ 
 		n=mList.length-1; 
 		for(int i=n/2;i>=0;i--){ 
+			compareCount++; //for the comp that put us into the for-loop
 			maxheap(i); 
-		} 
+		}
+		compareCount++; //for the comp that put us into the for-loop
 	} 
 
 	/**
@@ -48,17 +52,21 @@ public class HeapSorter
 	private static void maxheap(int i){ 
 		left=2*i; 
 		right=2*i+1; 
-		if(left <= n && mList[left] > mList[i]){ 
+		if(left <= n && mList[left] > mList[i]){
+			compareCount = compareCount+2; //for the two comps that put us into the if-statement
 			largest=left; 
-		} 
+		}
 		else{ 
+			compareCount = compareCount+2; //for the two comps that put us into the else-statement
 			largest=i; 
-		} 
-
+		}
+		
 		if(right <= n && mList[right] > mList[largest]){ 
-			largest=right; 
+			largest=right;
+			compareCount = compareCount+2; //for the two comps that put us into the if-statement
 		} 
-		if(largest!=i){ 
+		if(largest!=i){
+			compareCount++; //for the comp that put us into the if-statement
 			swap(i,largest); 
 			maxheap(largest); 
 		} 
