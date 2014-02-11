@@ -27,11 +27,11 @@ public class Pp4SortAnalysisMain {
 			int[] testList = rlg.getRandomList();
 
 			//sort a copy of the testList w/ each algorithm
-//			int[] hlist = 
+			int[] hlist = 
 					hSorter.sort(testList);
-//			for (int i=0;i<hlist.length; i++) {
-//				System.out.println(hlist[i]);
-//			}
+			for (int i=0;i<hlist.length; i++) {
+				System.out.println(hlist[i]);
+			}
 //			int[] mlist = 
 					mSorter.sort(testList);
 //			for (int i=0;i<mlist.length; i++) {

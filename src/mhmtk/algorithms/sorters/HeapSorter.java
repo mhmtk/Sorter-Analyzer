@@ -66,8 +66,6 @@ public class HeapSorter {
 	 */
 	private void fixHeap(int root, int key, int bound) {
 		int vacant = root;
-		if (vacant==0) 
-				vacant = 1;
 		while (2*vacant <=bound) {
 			compareCount++; //for the comparisons that put is into the while-loop
 			int largerChild = 2*vacant;
