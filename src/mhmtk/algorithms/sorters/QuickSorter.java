@@ -7,12 +7,6 @@ public class QuickSorter{
 	//counters
 	private static int swapCount;
 	private static int compareCount;
-
-//	/**
-//	 * 
-//	 */
-//	public QuickSorter() {
-//	}
 	
 	/**
 	 * 

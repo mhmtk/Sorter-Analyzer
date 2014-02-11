@@ -8,11 +8,6 @@ public class MergeSorter {
 	private static int swapCount; 
 	private static int compareCount;
 
-//	/**
-//	 * 
-//	 */
-//	public MergeSorter() {
-//	}
 
 	/**
 	 * 
