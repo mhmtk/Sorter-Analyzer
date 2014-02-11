@@ -2,24 +2,24 @@ package mhmtk.algorithms.sorters;
 
 public class MergeSorter {
 
-	private int[] mList;
+	private static int[] mList;
 
 	//counters
-	private int swapCount; 
-	private int compareCount;
+	private static int swapCount; 
+	private static int compareCount;
 
-	/**
-	 * 
-	 */
-	public MergeSorter() {
-	}
+//	/**
+//	 * 
+//	 */
+//	public MergeSorter() {
+//	}
 
 	/**
 	 * 
 	 * @param list
 	 * @return 
 	 */
-	public int[] sort(int[] list) {
+	public static int[] sort(int[] list) {
 		resetCounters();
 		mList = list;
 		mergeSort(0, mList.length -1);
@@ -29,7 +29,7 @@ public class MergeSorter {
 	/**
 	 * resets the counters back to zero
 	 */
-	private void resetCounters() {
+	private static void resetCounters() {
 		swapCount = 0;
 		compareCount = 0;
 	}
@@ -39,7 +39,7 @@ public class MergeSorter {
 	 * @param first the index of the first element in the part of list to sort
 	 * @param last the index of the last element in the part of list to sort
 	 */
-	private void mergeSort(int first, int last) {
+	private static void mergeSort(int first, int last) {
 		if (first < last) {
 			compareCount++; //for the comp that put us into the if-statement
 			int middle = (first + last)/2;
@@ -57,7 +57,7 @@ public class MergeSorter {
 	 * @param start2
 	 * @param end2
 	 */
-	private void mergeLists(int start1, int end1, int start2, int end2) {
+	private static void mergeLists(int start1, int end1, int start2, int end2) {
 		int finalStart = start1;
 		int finalEnd = end2;
 		int indexC = 0;
@@ -119,7 +119,7 @@ public class MergeSorter {
 	 * 
 	 * @return the swap count of the last sort
 	 */
-	public int getSwapCount() {
+	public static int getSwapCount() {
 		return swapCount;
 	}
 
@@ -127,7 +127,7 @@ public class MergeSorter {
 	 * 
 	 * @return the compare count of the last sort
 	 */
-	public int getCompareCount() {
+	public static int getCompareCount() {
 		return compareCount;
 	}
 }

@@ -2,24 +2,24 @@ package mhmtk.algorithms.sorters;
 
 public class QuickSorter{
 
-	private int[] mList;
+	private static int[] mList;
 	
 	//counters
-	private int swapCount;
-	private int compareCount;
+	private static int swapCount;
+	private static int compareCount;
 
-	/**
-	 * 
-	 */
-	public QuickSorter() {
-	}
+//	/**
+//	 * 
+//	 */
+//	public QuickSorter() {
+//	}
 	
 	/**
 	 * 
 	 * @param list
 	 * @return 
 	 */
-	public int[] sort(int[] list) {
+	public static int[] sort(int[] list) {
 		resetCounters();
 		mList = list;
 		quickSort(0, mList.length-1);
@@ -29,7 +29,7 @@ public class QuickSorter{
 	/**
 	 * resets the counters back to zero
 	 */
-	private void resetCounters() {
+	private static void resetCounters() {
 		swapCount = 0;
 		compareCount = 0;
 	}
@@ -39,7 +39,7 @@ public class QuickSorter{
 	 * @param first
 	 * @param last
 	 */
-	private void quickSort(int first, int last) {
+	private static void quickSort(int first, int last) {
 		if (first < last) {
 			compareCount++; //for the comp that put us into the if-statement
 			int pivot = pivotList(first, last);
@@ -55,7 +55,7 @@ public class QuickSorter{
 	 * @param last the index of the last element in the part of list to sort
 	 * @return
 	 */
-	private int pivotList(int first, int last) { 
+	private static int pivotList(int first, int last) { 
 		int pivotValue = mList[first];
 		int pivotPoint = first;
 		for (int index = first +1; index<=last;index++) {
@@ -79,7 +79,7 @@ public class QuickSorter{
 	 * @param i index of the first element
 	 * @param j index of the second element
 	 */
-	private void swap(int i, int j) {
+	private static void swap(int i, int j) {
 		int temp = mList[i];
 		mList[i] = mList[j];
 		mList[j] = temp;
@@ -90,7 +90,7 @@ public class QuickSorter{
 	 * 
 	 * @return the swap count of the last sort
 	 */
-	public int getSwapCount() {
+	public static int getSwapCount() {
 		return swapCount;
 	}
 
@@ -98,7 +98,7 @@ public class QuickSorter{
 	 * 
 	 * @return the compare count of the last sort
 	 */
-	public int getCompareCount() {
+	public static int getCompareCount() {
 		return compareCount;
 	}
 

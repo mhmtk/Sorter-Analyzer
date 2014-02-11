@@ -17,8 +17,8 @@ public class Pp4SortAnalysisMain {
 
 		//create sorters
 		HeapSorter hSorter = new HeapSorter();
-		MergeSorter mSorter = new MergeSorter();
-		QuickSorter qSorter = new QuickSorter();
+//		MergeSorter mSorter = new MergeSorter();
+//		QuickSorter qSorter = new QuickSorter();
 
 		for (int n=Nmin; n <= Nmax; n=n+Nincrement) {
 
@@ -33,12 +33,12 @@ public class Pp4SortAnalysisMain {
 				System.out.println(hlist[i]);
 			}
 //			int[] mlist = 
-					mSorter.sort(testList);
+					MergeSorter.sort(testList);
 //			for (int i=0;i<mlist.length; i++) {
 //				System.out.println(mlist[i]);
 //			}
 //			int[] qlist = 
-					qSorter.sort(testList);
+					QuickSorter.sort(testList);
 //			for (int i=0;i<qlist.length; i++) {
 //				System.out.println(qlist[i]);
 //			}
@@ -47,10 +47,10 @@ public class Pp4SortAnalysisMain {
 			results[n/Nincrement-1][0] = n;
 			results[n/Nincrement-1][1] = hSorter.getSwapCount();
 			results[n/Nincrement-1][2] = hSorter.getCompareCount();
-			results[n/Nincrement-1][3] = mSorter.getSwapCount();
-			results[n/Nincrement-1][4] = mSorter.getCompareCount(); 
-			results[n/Nincrement-1][5] = qSorter.getSwapCount();
-			results[n/Nincrement-1][6] = qSorter.getCompareCount();
+			results[n/Nincrement-1][3] = MergeSorter.getSwapCount();
+			results[n/Nincrement-1][4] = MergeSorter.getCompareCount(); 
+			results[n/Nincrement-1][5] = QuickSorter.getSwapCount();
+			results[n/Nincrement-1][6] = QuickSorter.getCompareCount();
 		}
 		for (int i=0; i<results.length; i++)
 			System.out.println(
