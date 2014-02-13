@@ -1,20 +1,20 @@
 package mhmtk.algorithms.sorters;
 import mhmtk.algorithms.rengens.RandomListGenerator;
 
-public class Pp4SortAnalysisMain {
+public class Pp3SortAnalysisMain {
 
-	static int Nmin=100;
-	static int Nincrement=100;
-	static int Nmax=2000;
+	static int Nmin=1000;
+	static int Nincrement=1000;
+	static int Nmax=1000;
 
 	static int[][] results = new int[(Nmax-Nmin)/Nincrement +1][7];
 
 	public static void main(String[] args) {
-		test();
-		printResults();
+		testHMQ();
+		printHMQResults();
 	}
 
-	private static void test() {
+	private static void testHMQ() {
 
 		// for loop to run the test for different N values
 		for (int n=Nmin; n <= Nmax; n=n+Nincrement) {
@@ -26,6 +26,9 @@ public class Pp4SortAnalysisMain {
 			int[] testList2 = testList1;
 			int[] testList3 = testList1;
 
+			for (int i=0; i<testList3.length; i++) {
+				System.out.println(testList3[i]);
+			}
 			//sort the testList's respective copy w/ each algorithm
 			//			int[] hlist = 
 			HeapSorter.sort(testList1);
@@ -42,6 +45,9 @@ public class Pp4SortAnalysisMain {
 			//			for (int i=0;i<qlist.length; i++) {
 			//				System.out.println(qlist[i]);
 			//			}
+			for (int i=0; i<testList3.length; i++) {
+				System.out.println(testList3[i]);
+			}
 
 			//store the results
 			results[n/Nincrement-1][0] = n;
@@ -51,11 +57,12 @@ public class Pp4SortAnalysisMain {
 			results[n/Nincrement-1][4] = MergeSorter.getCompareCount();
 			results[n/Nincrement-1][5] = QuickSorter.getSwapCount();
 			results[n/Nincrement-1][6] = QuickSorter.getCompareCount();
+			System.out.println(results[n/Nincrement-1][5] + results[n/Nincrement-1][6]);
 		}
 
 	}
 
-	private static void printResults()
+	private static void printHMQResults()
 	{
 		for (int i=0; i<results.length; i++)
 			System.out.println(

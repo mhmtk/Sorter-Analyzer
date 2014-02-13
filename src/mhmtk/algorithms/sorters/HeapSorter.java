@@ -20,6 +20,7 @@ public class HeapSorter
 	 * @return the sorted list
 	 */
 	public static int[] sort(int[] list){ 
+		resetCounters();
 		mList=list; 
 		buildheap();
 
@@ -31,7 +32,16 @@ public class HeapSorter
 		}
 		compareCount++; //for the comp that put us outside the for-loop
 		return mList;
-	} 
+	}
+	
+	/**
+	 * resets the counters back to zero
+	 */
+	private static void resetCounters() {
+		swapCount = 0;
+		compareCount = 0;
+	}
+
 
 	/**
 	 * 

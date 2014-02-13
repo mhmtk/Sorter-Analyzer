@@ -35,12 +35,12 @@ public class QuickSorter{
 	 */
 	private static void quickSort(int first, int last) {
 		if (first < last) {
-			compareCount++; //for the comp that put us into the if-statement
+//			compareCount++; //for the comp that put us into the if-statement
 			int pivot = pivotList(first, last);
 			quickSort(first, pivot-1);
 			quickSort(pivot+1, last);
 		}
-		compareCount++; //for the comp that put us outside the if-statement
+//		compareCount++; //for the comp that put us outside the if-statement
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class QuickSorter{
 		int pivotValue = mList[first];
 		int pivotPoint = first;
 		for (int index = first +1; index<=last;index++) {
-			compareCount++; //for the comparisons that put is into the for-loop
+//			compareCount++; //for the comparisons that put is into the for-loop
 			if (mList[index]<pivotValue) {
 				compareCount++; //for the comparisons that put is into the if-statement
 				pivotPoint++;
@@ -61,7 +61,7 @@ public class QuickSorter{
 			}
 			compareCount++; //for the comparisons that put is outside the if-statement
 		}
-		compareCount++; //for the comparisons that put us outside of the for-loop
+//		compareCount++; //for the comparisons that put us outside of the for-loop
 		//move pivot value into correct place
 		swap(first, pivotPoint);
 		return pivotPoint;

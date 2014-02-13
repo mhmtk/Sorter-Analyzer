@@ -58,7 +58,7 @@ public class MergeSorter {
 		int indexC = 0;
 		int[] result = new int[end2 - start1+1]; //?
 		while (start1<=end1 && start2<=end2) {
-			compareCount++; //for the comp that put us into the while-loop
+			compareCount = compareCount+2; //for the comp that put us into the while-loop
 			if (mList[start1] < mList[start2]) {
 				compareCount++; //for the comp that put us into the if-statement
 				result[indexC] = mList[start1];
@@ -66,12 +66,11 @@ public class MergeSorter {
 				start1++;
 			} 
 			else {
-				compareCount++; //for the comp that put us into the else-statement
+				compareCount = compareCount+2; //for the comp that put us into the else-statement
 				result[indexC] = mList[start2];
 				swapCount++;
 				start2++;
 			}
-			compareCount++; //for the comp that put us outside the if-statement
 			indexC++;
 		}
 		compareCount++; //for the comp that put us outside the while-loop
@@ -80,34 +79,33 @@ public class MergeSorter {
 		if (start1<=end1) {
 			compareCount++; //for the comp that put us into the if-statement
 			for (int i=start1; i <= end1; i++) {
-				compareCount++; //for the comp that put us into the for-loop
+//				compareCount++; //for the comp that put us into the for-loop
 				result[indexC] = mList[i];
 				swapCount++;
 				indexC++;
 			}
-			compareCount++; //for the comp that put us outside the for-loop
+//			compareCount++; //for the comp that put us outside the for-loop
 		}
 		else {
 			compareCount++; //for the comp that put us into the else-statement
 			for (int i=start2; i <= end2; i++) {
-				compareCount++; //for the comp that put us into the for-loop
+//				compareCount++; //for the comp that put us into the for-loop
 				result[indexC] = mList[i];
 				swapCount++;
 				indexC++;
 			}
-			compareCount++; //for the comp that put us outside the for-loop
+//			compareCount++; //for the comp that put us outside the for-loop
 		}
-		compareCount++; //for the comp that put us outside the if-statement
 
 		//now put the result back into the list
 		indexC=0;
 		for (int i=finalStart; i <= finalEnd; i++) {
-			compareCount++; //for the comp that put us into the for-loop
+//			compareCount++; //for the comp that put us into the for-loop
 			mList[i] = result[indexC];
 			swapCount++;
 			indexC++;
 		}
-		compareCount++; //for the comp that put us outside the for-loop
+//		compareCount++; //for the comp that put us outside the for-loop
 	}
 	
 	/**
