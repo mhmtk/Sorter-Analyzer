@@ -24,7 +24,7 @@ public class BubbleSorterI {
 	 * resets the counters back to zero
 	 */
 	private static void resetCounters() {
-		swapCount = 0;
+		swapCount = 0; 
 		compareCount = 0;
 	}
 
